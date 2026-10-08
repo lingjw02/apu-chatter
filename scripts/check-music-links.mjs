@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import {parseMusicLink,providerURL} from '../src/features/music/links.ts';
+assert.deepEqual(parseMusicLink('https://youtu.be/dQw4w9WgXcQ?si=abc'),{provider:'youtube',kind:'track',external_id:'dQw4w9WgXcQ'});
+assert.equal(parseMusicLink('https://www.youtube.com/playlist?list=PLabcdefghijk').kind,'playlist');
+assert.equal(parseMusicLink('https://open.spotify.com/intl-en/track/1234567890123456789012?si=abc').provider,'spotify');
+for(const link of ['javascript:alert(1)','https://youtube.com.evil.test/watch?v=dQw4w9WgXcQ','https://youtube.com@evil.test/watch?v=dQw4w9WgXcQ','http://youtu.be/dQw4w9WgXcQ','https://open.spotify.com/track/invalid'])assert.throws(()=>parseMusicLink(link));
+assert.equal(providerURL(parseMusicLink('https://youtu.be/dQw4w9WgXcQ')),'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+assert.deepEqual(parseMusicLink('https://music.apple.com/my/album/random-access-memories/617154241?i=617154366'),{provider:'apple',kind:'track',external_id:'my:617154241:617154366'});
+assert.equal(providerURL({provider:'apple',kind:'track',external_id:'my:617154241:617154366'}),'https://music.apple.com/my/album/617154241?i=617154366');
+assert.throws(()=>parseMusicLink('https://music.apple.com/my/album/123?i=javascript:evil'));
+console.log('PASS: music URL provider/ID allowlist and canonical links.');

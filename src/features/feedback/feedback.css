@@ -1,0 +1,10 @@
+.network-activity{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:1000;display:flex;align-items:center;gap:10px;padding:11px 18px 14px;border-radius:12px;background:#075360;color:#fff;box-shadow:0 8px 28px #24465126;font-size:12px;pointer-events:none;overflow:hidden}
+.wait-orbit{width:15px;height:15px;border:2px solid #ffffff55;border-top-color:#fff;border-radius:50%;animation:wait-turn .8s linear infinite}
+.network-track{position:absolute;bottom:0;left:0;width:40%;height:3px;background:#a8dcd1;animation:wait-travel 1.4s ease-in-out infinite}
+@keyframes wait-turn{to{transform:rotate(360deg)}}@keyframes wait-travel{from{transform:translateX(-100%)}to{transform:translateX(350%)}}
+.connected-app .tabs-row button{position:relative;transition:color .18s,background .18s}.connected-app .tabs-row button.active{background:#eff7f5;border-radius:9px 9px 0 0}
+.connected-app .group-item{transition:background .2s,box-shadow .2s,transform .2s}.connected-app .group-item:hover{transform:translateX(2px)}
+.connected-app .sharing-grid article{animation:content-arrive .22s ease-out}.connected-app .connected-empty .welcome-symbol{animation:content-arrive .35s ease-out}
+@keyframes content-arrive{from{opacity:.6;transform:translateY(6px)}to{opacity:1;transform:none}}
+.media-asset audio{max-width:100%;width:300px}.chat-media-asset .media-asset{max-width:min(340px,75vw)}
+@media(prefers-reduced-motion:reduce){.wait-orbit,.network-track,.connected-app .sharing-grid article,.connected-app .welcome-symbol{animation:none!important}.connected-app .group-item{transition:none}.connected-app .group-item:hover{transform:none}}

@@ -1,0 +1,7 @@
+PASS: deployed music queue, host authorization and succession.
+PASS: real private image/GIF/recorded-audio sends, delayed-request loading visual, lost-upload-ack retry without duplication, peer playback metadata, refresh and recording cancellation/track shutdown. Synthetic microphone, not physical audio quality.
+PASS: real desktop/mobile sign-in, cross-browser group message and profile photo upload/removal.
+PASS: real avatar upload, shared-group access, anonymous denial and immediate removal access denial.
+PASS: hosted own-block recovery and unblocking after leaving the shared group, without disclosure to the other account.
+PASS: real Auth sessions, invite join, private Storage upload/read/delete, cleanup Edge Function, activity, concurrent board edits/stale-write rejection and block closure. No emails sent.
+Temporary hosted test accounts and group removed.

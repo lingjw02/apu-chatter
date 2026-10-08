@@ -1,0 +1,1 @@
+PASS: production public auth pages render, protected groups show a sign-in gate to unauthenticated users. Read-only, no emails or production writes.

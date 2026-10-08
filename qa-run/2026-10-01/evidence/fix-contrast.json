@@ -1,0 +1,702 @@
+[
+  {
+    "width": 1920,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1920,
+    "view": "AI",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Board",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1366,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Stories",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 1010,
+    "view": "AI",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 768,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 375,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Chat",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Chat",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Chat",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Chat",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Stories",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Stories",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Stories",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Albums",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Albums",
+    "text": "Board",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Albums",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Board",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Board",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "Board",
+    "text": "AI",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "AI",
+    "text": "Chat",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "AI",
+    "text": "Stories",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  },
+  {
+    "width": 320,
+    "view": "AI",
+    "text": "Albums",
+    "color": "rgb(82, 109, 112)",
+    "ratio": 5.56
+  }
+]

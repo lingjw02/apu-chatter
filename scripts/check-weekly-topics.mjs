@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {parseWeeklyResult} from '../supabase/functions/_shared/weekly-topics.mjs';
+const ids=['11111111-1111-4111-8111-111111111111','22222222-2222-4222-8222-222222222222'];
+const result=parseWeeklyResult(JSON.stringify({summary:'A study session was discussed.',topics:[{label:'Study plans',sources:[...ids,ids[0]]},{label:'Invented',sources:['unknown']},{label:'One message',sources:[ids[0]]}]}),ids);
+assert.equal(result.summary,'A study session was discussed.');
+assert.deepEqual(result.topics,[{label:'Study plans',sources:ids},{label:'One message',sources:[ids[0]]}]);
+assert.throws(()=>parseWeeklyResult('not JSON',ids));
+assert.throws(()=>parseWeeklyResult('{"summary":"","topics":[]}',ids));
+assert.equal(parseWeeklyResult('```json\n'+JSON.stringify({summary:'Summary',topics:[]})+'\n```',ids).topics.length,0);
+assert.equal(parseWeeklyResult(JSON.stringify({summary:'Summary',topics:Array.from({length:8},(_,i)=>({label:'Topic '+i,sources:ids}))}),ids).topics.length,5);
+console.log('PASS: weekly output parsing, known-source filtering, deduplication, bounded topic count and malformed output rejection.');

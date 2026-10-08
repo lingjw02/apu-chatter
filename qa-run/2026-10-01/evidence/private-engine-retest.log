@@ -1,0 +1,1 @@
+PASS: consent, pair uniqueness, participant-only reads, owner isolation, idempotent sends, expiry, close/leave/removal delete messages.

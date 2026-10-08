@@ -1,0 +1,15 @@
+import { createPortal } from 'react-dom';
+import { useState } from 'react';
+import { Sheet } from '../groups/Sheet';
+import { audioKey, enableAudio, importSound, playSound } from './audio';
+import { readSounds, soundKey } from './preferences';
+import type { SoundPreferences } from './preferences';
+import './personalization.css';
+export function SoundSettings({userId,groupId,members}:{userId:string;groupId:string;members:{id:string;display_name:string}[]}){
+ const [open,setOpen]=useState(false),[prefs,setPrefs]=useState(()=>readSounds(userId,groupId)),[error,setError]=useState(''),[notice,setNotice]=useState('');
+ function save(next:SoundPreferences){try{localStorage.setItem(soundKey(userId,groupId),JSON.stringify(next));setPrefs(next);setError('');setNotice('Saved for this group on this browser.');}catch{setError('Your browser could not save sound preferences.');}}
+ async function action(work:()=>Promise<void>){try{setError('');await work();}catch(e){setError(e instanceof Error?e.message:'Could not play this audio file.');}}
+ return <><button className="text-button preference-launch" onClick={()=>setOpen(true)}>Group sounds</button>{open&&createPortal(<Sheet label="Group sounds" onClose={()=>setOpen(false)}><div className="preference-heading"><h2>Know who’s here.</h2><button className="text-button" onClick={()=>setOpen(false)}>Done</button></div><p>Give each person their own sound. Only you hear these choices, while this app is open. Enable sound again after reloading.</p><button className="primary-button" onClick={()=>action(async()=>{await enableAudio();await playSound('chime','');setNotice('Sound enabled for this visit.');})}>Enable sound</button><label className="sound-mute"><input type="checkbox" checked={prefs.muted} onChange={e=>save({...prefs,muted:e.target.checked})}/>Mute this group</label>
+ {members.filter(m=>m.id!==userId).map(m=><div className="sound-member" key={m.id}><strong>{m.display_name}</strong><select aria-label={`Sound for ${m.display_name}`} value={prefs.senders[m.id]||'chime'} onChange={e=>save({...prefs,senders:{...prefs.senders,[m.id]:e.target.value}})}><option value="chime">Chime</option><option value="pop">Pop</option><option value="silent">Silent</option>{prefs.senders[m.id]==='imported'&&<option value="imported">Imported</option>}</select><button className="text-button" onClick={()=>action(async()=>{await enableAudio();await playSound(prefs.senders[m.id]||'chime',audioKey(userId,groupId,m.id));})}>Preview</button><label className="theme-import">Import audio for {m.display_name}<input type="file" accept="audio/*" aria-label={`Import sound for ${m.display_name}`} onChange={e=>{const file=e.target.files?.[0];e.target.value='';if(file)void action(async()=>{await importSound(audioKey(userId,groupId,m.id),file);save({...prefs,senders:{...prefs.senders,[m.id]:'imported'}});});}}/></label></div>)}
+ {members.length<2&&<p>Other members will appear here when they join.</p>}<p>Imports stay on this device: up to 2 MB and five seconds each.</p>{error&&<p role="alert" className="auth-error">{error}</p>}{notice&&<p role="status">{notice}</p>}</Sheet>,document.body)}</>;
+}

@@ -1,0 +1,92 @@
+{
+  "browser": "153.0.8010.12",
+  "observations": [
+    {
+      "width": 1366,
+      "path": "/login",
+      "url": "https://apu-chatter.pages.dev/login",
+      "headings": [
+        "Your people.Your little corner.",
+        "Welcome back."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "path": "/register",
+      "url": "https://apu-chatter.pages.dev/register",
+      "headings": [
+        "Your people.Your little corner.",
+        "Make yourself at home."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "path": "/groups",
+      "url": "https://apu-chatter.pages.dev/groups",
+      "headings": [
+        "Sign in to your corner."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "path": "/login",
+      "url": "https://apu-chatter.pages.dev/login",
+      "headings": [
+        "Your people.Your little corner.",
+        "Welcome back."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "path": "/register",
+      "url": "https://apu-chatter.pages.dev/register",
+      "headings": [
+        "Your people.Your little corner.",
+        "Make yourself at home."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "path": "/groups",
+      "url": "https://apu-chatter.pages.dev/groups",
+      "headings": [
+        "Sign in to your corner."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "path": "/login",
+      "url": "https://apu-chatter.pages.dev/login",
+      "headings": [
+        "Your people.Your little corner.",
+        "Welcome back."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "path": "/register",
+      "url": "https://apu-chatter.pages.dev/register",
+      "headings": [
+        "Your people.Your little corner.",
+        "Make yourself at home."
+      ],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "path": "/groups",
+      "url": "https://apu-chatter.pages.dev/groups",
+      "headings": [
+        "Sign in to your corner."
+      ],
+      "overflow": false
+    }
+  ]
+}

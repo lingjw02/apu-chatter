@@ -1,0 +1,56 @@
+import { PGlite } from '@electric-sql/pglite';
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const db=new PGlite();
+await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key,email_confirmed_at timestamptz,raw_user_meta_data jsonb default '{}');create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema public,auth to authenticated,anon;grant execute on function auth.uid() to authenticated,anon;`);
+await db.exec(await readFile('supabase/migrations/202609210001_core.sql','utf8'));
+await db.exec(await readFile('supabase/migrations/202609220002_moderation.sql','utf8'));
+await db.exec(await readFile('supabase/migrations/20260922142036_optimize_policy_auth_checks.sql','utf8'));
+const users=Array.from({length:5},(_,i)=>`${i+1}`.repeat(8)+'-'+`${i+1}`.repeat(4)+'-4'+`${i+1}`.repeat(3)+'-8'+`${i+1}`.repeat(3)+'-'+`${i+1}`.repeat(12));
+for(const id of users)await db.query('insert into auth.users(id,email_confirmed_at)values($1,now())',[id]);
+async function as(i){await db.exec('reset role');await db.query(`select set_config('request.jwt.claim.sub',$1,false)`,[users[i]]);await db.exec('set role authenticated');}
+await as(0);const g=(await db.query(`select public.create_group('Vote test','','UTC') as id`)).rows[0].id;
+const invite=(await db.query('select public.create_invite($1) as data',[g])).rows[0].data;
+for(let i=1;i<5;i++){await as(i);await db.query('select public.join_group($1)',[invite.token]);}
+await as(0);await db.query(`select public.set_member_role($1,$2,'admin')`,[g,users[1]]);
+await as(2);await assert.rejects(db.query(`select public.set_member_role($1,$2,'admin')`,[g,users[2]]));
+await assert.rejects(db.query('select public.start_kick_vote($1,$2)',[g,users[0]]));
+let vote=(await db.query('select public.start_kick_vote($1,$2) as id',[g,users[4]])).rows[0].id;
+let row=(await db.query('select * from public.kick_votes where id=$1',[vote])).rows[0];assert.equal(row.threshold,2);
+await db.query(`select public.cast_kick_vote($1,'kick')`,[vote]);
+await db.query(`select public.cast_kick_vote($1,'kick')`,[vote]);
+assert.equal((await db.query('select kick_count from public.kick_votes where id=$1',[vote])).rows[0].kick_count,1);
+await as(4);await assert.rejects(db.query(`select public.cast_kick_vote($1,'keep')`,[vote]));
+await as(3);await db.query(`select public.cast_kick_vote($1,'kick')`,[vote]);
+assert.equal((await db.query('select status from public.kick_votes where id=$1',[vote])).rows[0].status,'passed');
+assert.equal((await db.query('select * from public.vote_ballots')).rows.length,1); // own ballot only
+await as(4);assert.equal((await db.query('select * from public.memberships')).rows.length,0);
+await assert.rejects(db.query('select public.join_group($1)',[invite.token]));
+await as(1);await db.query('select public.allow_reentry($1,$2)',[g,users[4]]);
+await as(4);await db.query('select public.join_group($1)',[invite.token]);
+await as(2);vote=(await db.query('select public.start_kick_vote($1,$2) as id',[g,users[1]])).rows[0].id;
+assert.equal((await db.query('select threshold from public.kick_votes where id=$1',[vote])).rows[0].threshold,4);
+for(const i of [0,2,3]){await as(i);await db.query(`select public.cast_kick_vote($1,'kick')`,[vote]);}
+assert.equal((await db.query('select status from public.kick_votes where id=$1',[vote])).rows[0].status,'open');
+await as(4);await db.query(`select public.cast_kick_vote($1,'kick')`,[vote]);
+assert.equal((await db.query('select status from public.kick_votes where id=$1',[vote])).rows[0].status,'passed');
+await as(0);await db.query(`select public.set_member_role($1,$2,'admin')`,[g,users[2]]);
+await as(2);await assert.rejects(db.query('select public.allow_reentry($1,$2)',[g,users[1]]));
+await as(0);await db.query('select public.allow_reentry($1,$2)',[g,users[1]]);
+await as(1);await db.query('select public.join_group($1)',[invite.token]);
+assert.equal((await db.query('select role from public.memberships where group_id=$1 and user_id=$2',[g,users[1]])).rows[0].role,'member');
+await as(0);await assert.rejects(db.query('select public.leave_group($1)',[g]));
+await as(1);vote=(await db.query('select public.start_kick_vote($1,$2) as id',[g,users[3]])).rows[0].id;
+await as(4);await db.query('select public.leave_group($1)',[g]);
+await as(1);assert.equal((await db.query('select status from public.kick_votes where id=$1',[vote])).rows[0].status,'cancelled');
+await as(0);await db.query('select public.transfer_ownership($1,$2)',[g,users[1]]);
+assert.equal((await db.query(`select count(*)::int as count from public.memberships where group_id=$1 and role='owner'`,[g])).rows[0].count,1);
+await assert.rejects(db.query('select public.remove_member($1,$2)',[g,users[1]]));
+await as(2);await assert.rejects(db.query('select public.remove_member($1,$2)',[g,users[0]]));
+await db.query('select public.remove_member($1,$2)',[g,users[3]]);
+assert.equal((await db.query('select removed_role from public.group_bans where group_id=$1 and user_id=$2',[g,users[3]])).rows[0].removed_role,'member');
+await as(1);vote=(await db.query('select public.start_kick_vote($1,$2) as id',[g,users[0]])).rows[0].id;
+await db.exec('reset role');await db.query(`update public.kick_votes set expires_at=now()-interval '1 minute' where id=$1`,[vote]);
+await as(2);await assert.rejects(db.query(`select public.cast_kick_vote($1,'kick')`,[vote]));
+await as(1);await assert.rejects(db.query('select public.start_kick_vote($1,$2)',[g,users[0]]));
+await db.close();console.log('PASS: ordinary/admin vote thresholds, auto-removal, owner immunity, ballot privacy/idempotency, re-entry authority, role reset, electorate cancellation, ownership transfer and leave. Embedded Postgres only.');

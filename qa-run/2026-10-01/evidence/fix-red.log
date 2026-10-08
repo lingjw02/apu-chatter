@@ -1,0 +1,9 @@
+Connected UI browser: chromium
+file:///D:/02_Development_Tools/social-app/scripts/qa-ui-audit.mjs:134
+   if(result.toolsWidth>result.toolsClient)throw Error(`Group tools clip at ${width}px: ${result.toolsWidth}/${result.toolsClient}`);
+                                                 ^
+
+Error: Group tools clip at 768px: 578/519
+    at file:///D:/02_Development_Tools/social-app/scripts/qa-ui-audit.mjs:134:50
+
+Node.js v22.18.0

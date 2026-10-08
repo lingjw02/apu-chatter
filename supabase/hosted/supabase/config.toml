@@ -1,0 +1,12 @@
+project_id = "social-app"
+[auth]
+site_url = "https://apu-chatter.pages.dev"
+additional_redirect_urls = ["https://apu-chatter.pages.dev/auth/callback**", "https://apu-chatter.pages.dev/reset-password", "http://127.0.0.1:5173/auth/callback**", "http://127.0.0.1:5173/reset-password", "http://localhost:5173/auth/callback**", "http://localhost:5173/reset-password"]
+enable_signup = true
+enable_anonymous_sign_ins = false
+minimum_password_length = 12
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+[auth.sms]
+enable_signup = false

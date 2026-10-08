@@ -1,0 +1,13 @@
+node_modules/
+dist/
+test-results/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.wrangler/
+!.env.openrouter.example
+
+# Local operational backups and generated root logs
+.agent-tmp/
+/*.log

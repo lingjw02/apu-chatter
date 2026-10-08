@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {reconcileWrite} from '../src/features/board/write-recovery.ts';
+const data={kind:'pen',color:'#076371',width:3,points:[[1,2],[3,4]]};
+const pending={id:'shape',tab_id:'tab',actor_id:'me',before:null,data,deleted:false};
+assert.equal(reconcileWrite(pending,null),'retry');
+assert.equal(reconcileWrite(pending,{id:'shape',tab_id:'tab',updated_by:'me',data:{points:data.points,width:3,color:'#076371',kind:'pen'},revision:1,deleted:false}),'acknowledged');
+assert.equal(reconcileWrite(pending,{id:'shape',tab_id:'tab',updated_by:'someone-else',data,revision:1,deleted:false}),'conflict');
+assert.equal(reconcileWrite(pending,{id:'shape',tab_id:'tab',data,revision:2,deleted:false}),'conflict');
+assert.equal(reconcileWrite(pending,{id:'shape',tab_id:'tab',data:{...data,width:5},revision:1,deleted:false}),'conflict');
+const before={id:'shape',tab_id:'tab',updated_by:'me',data,revision:4,deleted:false},erase={...pending,before,deleted:true};
+assert.equal(reconcileWrite(erase,before),'retry');
+assert.equal(reconcileWrite(erase,{...before,revision:5,deleted:true}),'acknowledged');
+assert.equal(reconcileWrite(erase,null),'conflict');
+console.log('PASS: uncommitted retries, lost acknowledgements, JSONB key ordering, erase recovery and concurrent-edit conflicts.');

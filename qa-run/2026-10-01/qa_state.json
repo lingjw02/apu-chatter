@@ -1,0 +1,794 @@
+{
+  "app": "APU Chatter — production public / local fixture audit",
+  "env": "test",
+  "tier": "B",
+  "created": "2026-10-01T13:08:07",
+  "notes_for_report": "",
+  "features": {
+    "F-001": {
+      "id": "F-001",
+      "module": "Auth",
+      "page": "Public",
+      "function": "Production login and registration render",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\production-readonly.json"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-002": {
+      "id": "F-002",
+      "module": "Auth",
+      "page": "Groups",
+      "function": "Unauthenticated group access shows sign-in gate",
+      "priority": "Critical",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\production-readonly.json"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-003": {
+      "id": "F-003",
+      "module": "Auth",
+      "page": "Forms",
+      "function": "Account form controls and safe return paths with fixture configuration",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\accounts-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-004": {
+      "id": "F-004",
+      "module": "Groups",
+      "page": "Groups",
+      "function": "Create a group with fixture backend",
+      "priority": "High",
+      "risk": "crud",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-005": {
+      "id": "F-005",
+      "module": "Chat",
+      "page": "Chat",
+      "function": "Send retries retain draft and deduplicate lost acknowledgements",
+      "priority": "Critical",
+      "risk": "data-loss",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-006": {
+      "id": "F-006",
+      "module": "Chat",
+      "page": "Chat",
+      "function": "Delete message confirmation and deleted marker",
+      "priority": "High",
+      "risk": "data-loss",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-007": {
+      "id": "F-007",
+      "module": "Groups",
+      "page": "Invites",
+      "function": "Create QR invitation and revoke fixture invite",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-008": {
+      "id": "F-008",
+      "module": "Groups",
+      "page": "Members",
+      "function": "Kick vote removes member and owner permits reentry",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-009": {
+      "id": "F-009",
+      "module": "Profile",
+      "page": "Profile",
+      "function": "Edit profile and avatar controls",
+      "priority": "Medium",
+      "risk": "crud",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-010": {
+      "id": "F-010",
+      "module": "Stories",
+      "page": "Stories",
+      "function": "Publish fixture text post and open seen update",
+      "priority": "High",
+      "risk": "crud",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-011": {
+      "id": "F-011",
+      "module": "Stories",
+      "page": "Stories",
+      "function": "Paged history and refresh reconcile deleted content",
+      "priority": "High",
+      "risk": "data-loss",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-012": {
+      "id": "F-012",
+      "module": "Stories",
+      "page": "Stories",
+      "function": "Type filters and manual/keyboard viewer navigation",
+      "priority": "Medium",
+      "risk": "search-filter",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\clubhouse-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-013": {
+      "id": "F-013",
+      "module": "Albums",
+      "page": "Albums",
+      "function": "Selected group view and album folder persist across refresh",
+      "priority": "High",
+      "risk": "navigation",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-014": {
+      "id": "F-014",
+      "module": "Board",
+      "page": "Board",
+      "function": "Drawing text tabs and personal undo interface",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-015": {
+      "id": "F-015",
+      "module": "AI",
+      "page": "AI",
+      "function": "Opt-in summary interface and invalid date range recovery",
+      "priority": "Medium",
+      "risk": "forms",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-016": {
+      "id": "F-016",
+      "module": "Music",
+      "page": "Music",
+      "function": "Queue selection host controls and natural-end retry with provider mocks",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-017": {
+      "id": "F-017",
+      "module": "Music",
+      "page": "Music",
+      "function": "Minimize keeps listening and same provider instance",
+      "priority": "High",
+      "risk": "data-loss",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-018": {
+      "id": "F-018",
+      "module": "Music",
+      "page": "Library",
+      "function": "Save/load deduplication and outsider denial in isolated SQL engine",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\music-engine.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-019": {
+      "id": "F-019",
+      "module": "Private chat",
+      "page": "Private",
+      "function": "Request acceptance and retryable private message sends",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-020": {
+      "id": "F-020",
+      "module": "Safety",
+      "page": "Profile",
+      "function": "Blocking closes private chat and unblock retry works with no groups",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-021": {
+      "id": "F-021",
+      "module": "Themes",
+      "page": "Appearance",
+      "function": "Custom CSS import sandbox and safe mode",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-022": {
+      "id": "F-022",
+      "module": "Composer",
+      "page": "Chat",
+      "function": "Emoji image preview GIF favourites and dictation draft with browser mocks",
+      "priority": "Medium",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-023": {
+      "id": "F-023",
+      "module": "Sound",
+      "page": "Group sounds",
+      "function": "Persistent sender preferences and unsupported audio feedback",
+      "priority": "Medium",
+      "risk": "secondary",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\connected-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-024": {
+      "id": "F-024",
+      "module": "Wallpaper",
+      "page": "Room style",
+      "function": "Local style persistence reduced motion and eight group switches",
+      "priority": "Medium",
+      "risk": "navigation",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\clubhouse-regression.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-025": {
+      "id": "F-025",
+      "module": "Media",
+      "page": "Storage",
+      "function": "Private media permissions constraints story retention and canonical deletion in SQL engine",
+      "priority": "Critical",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Only the evidence scope passes: production public read-only for F-001/002; other features use local browser mocks or isolated SQL, not live service verification.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\sharing-engine.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-026": {
+      "id": "F-026",
+      "module": "UI",
+      "page": "All group pages",
+      "function": "Tool rail remains reachable at tablet and narrow mobile widths",
+      "priority": "Medium",
+      "risk": "navigation",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "Six viewport retests and connected UI regression passed.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\ui-repeat-measurements.json"
+        }
+      ],
+      "bugs": [
+        "BUG-001"
+      ],
+      "confirmed_destructive": ""
+    },
+    "F-027": {
+      "id": "F-027",
+      "module": "Accessibility",
+      "page": "Group header and tabs",
+      "function": "Normal text contrast meets 4.5 to 1 reference",
+      "priority": "Medium",
+      "risk": "secondary",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "100 rendered contrast checks passed.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\fix-contrast.json"
+        }
+      ],
+      "bugs": [
+        "BUG-002"
+      ],
+      "confirmed_destructive": ""
+    },
+    "F-028": {
+      "id": "F-028",
+      "module": "Voice",
+      "page": "Voice room",
+      "function": "Physical microphone and cross-network relay audio",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "BLOCKED",
+      "note": "No physical microphone/device or TURN relay credentials exercised.",
+      "evidence": [],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-029": {
+      "id": "F-029",
+      "module": "Email",
+      "page": "Registration",
+      "function": "Outsider verification and reset email delivery",
+      "priority": "Critical",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "BLOCKED",
+      "note": "No SMTP configuration or outbound email exercise in this audit.",
+      "evidence": [],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-030": {
+      "id": "F-030",
+      "module": "AI",
+      "page": "Provider",
+      "function": "Actual OpenRouter requests and weekly scheduler this run",
+      "priority": "High",
+      "risk": "core-business",
+      "destructive": false,
+      "related": [],
+      "state": "BLOCKED",
+      "note": "No actual model request or weekly execution; mocked interface only.",
+      "evidence": [],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-031": {
+      "id": "F-031",
+      "module": "Board",
+      "page": "Collaboration",
+      "function": "Hosted concurrent multi-account editing this run",
+      "priority": "High",
+      "risk": "data-loss",
+      "destructive": false,
+      "related": [],
+      "state": "BLOCKED",
+      "note": "No writes to production; local fixture interface does not establish hosted concurrency.",
+      "evidence": [],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-032": {
+      "id": "F-032",
+      "module": "Private chat",
+      "page": "SQL engine",
+      "function": "Private chat SQL standalone harness",
+      "priority": "High",
+      "risk": "auth-security",
+      "destructive": false,
+      "related": [],
+      "state": "PASSED",
+      "note": "In-memory SQL checks pass consent, access isolation, retries, expiry and message deletion; no production writes.",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\private-engine-retest.log"
+        }
+      ],
+      "bugs": [],
+      "confirmed_destructive": ""
+    },
+    "F-033": {
+      "id": "F-033",
+      "module": "Browser",
+      "page": "Compatibility",
+      "function": "Physical Android screen reader and other browser engines",
+      "priority": "Medium",
+      "risk": "secondary",
+      "destructive": false,
+      "related": [],
+      "state": "BLOCKED",
+      "note": "Chromium desktop automation only; no screen reader, physical device or Firefox/WebKit run.",
+      "evidence": [],
+      "bugs": [],
+      "confirmed_destructive": ""
+    }
+  },
+  "bugs": {
+    "BUG-001": {
+      "title": "Group tools clip on tablet and narrow phones",
+      "features": [
+        "F-026"
+      ],
+      "severity": "Medium",
+      "confidence": "Confirmed",
+      "kind": "ui",
+      "category": "secondary",
+      "preconditions": [
+        "Connected local fixture account, group selected; Chromium at 768 or 320px."
+      ],
+      "steps": [
+        "Open Chat at 768px with desktop sidebar visible.",
+        "Inspect Room style at the right edge of Group tools.",
+        "Repeat at 320px and inspect Private chats and Room style."
+      ],
+      "expected": "All five tools are visible and reachable without hidden horizontal clipping.",
+      "actual": "At 768px rail scrollWidth578/clientWidth519; Room style right edge815 exceeds viewport768. At 320px Private chats right342 and Room style right388 exceed viewport320. No page scrollbar signals the hidden actions.",
+      "repro": "2/2",
+      "suspected_area": null,
+      "suspected_basis": null,
+      "recommendation": "Use available chat-container width to switch all five controls to accessible 44px icon buttons, or provide deliberate horizontal tool scrolling; preserve labels for screen readers.",
+      "impl_area": "Group tools responsive layout / connected.css / room-style.css",
+      "risk": "Keep popover focus/anchor behavior and private request badge visible.",
+      "verification": "At 768,375,320 every tool fits and can open by pointer and keyboard; repeat group switching and check message area height.",
+      "context": null,
+      "id": "BUG-001",
+      "status": "VERIFIED_FIXED",
+      "created": "2026-10-01T13:15:41",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\chat-768.png"
+        },
+        {
+          "type": "file",
+          "value": "evidence\\chat-320.png"
+        },
+        {
+          "type": "file",
+          "value": "evidence\\ui-measurements.json"
+        },
+        {
+          "type": "file",
+          "value": "evidence\\ui-repeat-measurements.json"
+        }
+      ],
+      "history": [
+        {
+          "ts": "2026-10-01T13:26:10",
+          "event": "claimed fixed (UNVERIFIED)",
+          "note": "Compact labelled tools fit at all six tested widths."
+        },
+        {
+          "ts": "2026-10-01T13:26:11",
+          "event": "retest PASS",
+          "note": "Rendered widths 1920,1366,1010,768,375,320 have no tool clipping. Screenshot files now show post-fix captures; baseline remains ui-measurements.json and fix-red.log.",
+          "evidence": [
+            "evidence\\ui-repeat-measurements.json"
+          ]
+        }
+      ]
+    },
+    "BUG-002": {
+      "title": "Small header and inactive navigation text fall below contrast reference",
+      "features": [
+        "F-027"
+      ],
+      "severity": "Medium",
+      "confidence": "Confirmed",
+      "kind": "accessibility",
+      "category": "secondary",
+      "preconditions": [
+        "Default Clubhouse theme in local rendered UI."
+      ],
+      "steps": [
+        "Open Chat and measure member-count text against its white header.",
+        "Measure inactive tab labels and repeat on Stories and another viewport."
+      ],
+      "expected": "Normal-sized text has at least 4.5:1 contrast.",
+      "actual": "Member-count text rgb(110,129,137) on white at11px is4.07:1; inactive tabs rgb(106,124,132) on white at12px are4.35:1.",
+      "repro": "2/2",
+      "suspected_area": null,
+      "suspected_basis": null,
+      "recommendation": "Darken default header metadata and inactive tab text to a tested token such as #526d70; keep selected-tab state distinct.",
+      "impl_area": "Shared muted text tokens / group header and tab CSS",
+      "risk": "Recheck dark/imported themes and other surfaces consuming the muted token.",
+      "verification": "Remeasure normal text contrast on default Chat and Stories; verify visible keyboard focus and active/disabled distinctions.",
+      "context": null,
+      "id": "BUG-002",
+      "status": "VERIFIED_FIXED",
+      "created": "2026-10-01T13:15:41",
+      "evidence": [
+        {
+          "type": "file",
+          "value": "evidence\\ui-repeat-measurements.json"
+        },
+        {
+          "type": "file",
+          "value": "evidence\\contrast-findings.json"
+        }
+      ],
+      "history": [
+        {
+          "ts": "2026-10-01T13:26:11",
+          "event": "claimed fixed (UNVERIFIED)",
+          "note": "Darker header metadata and inactive tabs."
+        },
+        {
+          "ts": "2026-10-01T13:26:12",
+          "event": "retest PASS",
+          "note": "100 rendered header/tab contrast checks passed; minimum 5.56:1.",
+          "evidence": [
+            "evidence\\fix-contrast.json"
+          ]
+        }
+      ]
+    }
+  },
+  "notes": [
+    {
+      "id": "NOTE-001",
+      "type": "observation",
+      "text": "Private SQL standalone test cannot initialize because its fixture lacks storage.buckets required by a newer migration. Restore the local storage fixture, then rerun; not evidence private chats fail in the app.",
+      "feature": "F-032",
+      "ts": "2026-10-01T13:15:41"
+    },
+    {
+      "id": "NOTE-002",
+      "type": "ux-suggestion",
+      "text": "Message profile links measured22px high. Consider larger mobile hit areas; no blanket WCAG target-size failure claimed because spacing/exception analysis and assistive-device testing were not performed.",
+      "feature": "",
+      "ts": "2026-10-01T13:15:41"
+    },
+    {
+      "id": "NOTE-003",
+      "type": "expected-behavior",
+      "text": "Wallpapers and favourite GIFs are device-local, dictation browser-dependent, Spotify playback external, and music joins explicit; these are intentional product choices, not defects.",
+      "feature": "",
+      "ts": "2026-10-01T13:15:42"
+    }
+  ],
+  "next_bug": 3,
+  "next_note": 4
+}

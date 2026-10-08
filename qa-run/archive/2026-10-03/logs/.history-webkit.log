@@ -1,0 +1,5 @@
+Connected UI browser: webkit
+LIMITATION: this browser build has no Web Audio; verified the unsupported message, not sound import/playback.
+PASS: personalization CSS validation, sandbox bridge, mobile dialog, browser audio capability handling and persistent sender preferences.
+PASS: blocked-account recovery with no groups, confirmation cancellation and failed-request retry.
+PASS: mocked connected UI — session, groups, sends, QR/invite/revoke, member controls, vote/remove/re-entry flow, profile update. Not a live backend test.

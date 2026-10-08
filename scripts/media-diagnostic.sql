@@ -1,0 +1,1 @@
+select json_agg(t) from (select row_number() over(order by g.created_at) as default_order,(select count(*) from public.group_content c where c.group_id=g.id and c.state='live') as live_content,(select count(*) from public.memberships m where m.group_id=g.id) as members from public.groups g order by g.created_at)t;

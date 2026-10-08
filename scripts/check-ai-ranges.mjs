@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';import {fixture} from './database-fixture.mjs';
+process.on('uncaughtException',e=>{console.error(e.message);process.exit(1);});
+const {db,as,rpc}=await fixture(2);await as(0);const group=await rpc('create_group',['Range test','','UTC']);await rpc('set_group_ai',[group,true]);
+const start=new Date(Date.now()-86400000).toISOString(),end=new Date().toISOString(),clientId=crypto.randomUUID();
+const id=await rpc('request_ai_job_range',[group,'summary',clientId,start,end]);assert.equal(await rpc('request_ai_job_range',[group,'summary',clientId,start,end]),id);
+await assert.rejects(rpc('request_ai_job_range',[group,'summary',clientId,new Date(Date.now()-3600000).toISOString(),end]));
+await assert.rejects(rpc('request_ai_job_range',[group,'summary',crypto.randomUUID(),end,start]));
+await assert.rejects(rpc('request_ai_job_range',[group,'summary',crypto.randomUUID(),'2020-01-01',end]));
+await as(1);await assert.rejects(rpc('request_ai_job_range',[group,'summary',crypto.randomUUID(),start,end]));
+await db.exec('reset role');const user=(await db.query('select id from auth.users limit 1')).rows[0].id;
+await db.query('insert into public.group_messages(group_id,author_id,body,client_id,created_at)values($1,$2,$3,$4,$5)',[group,user,'Inside selected range',crypto.randomUUID(),new Date(Date.now()-3600000).toISOString()]);
+await db.query('insert into public.group_messages(group_id,author_id,body,client_id,created_at)values($1,$2,$3,$4,$5)',[group,user,'Outside selected range',crypto.randomUUID(),'2020-01-01']);
+await rpc('claim_ai_job',[id]);const context=await rpc('ai_job_context',[id]);assert.equal(context.length,1);assert.equal(context[0].body,'Inside selected range');
+console.log('PASS: selected AI range validation, retry binding, outsider rejection and actual context filtering.');await db.close();
