@@ -1,6 +1,0 @@
-Connected UI browser: chromium
-PASS: personalization CSS validation, sandbox bridge, mobile dialog, browser audio capability handling and persistent sender preferences.
-PASS: composer emoji, image preview/cancel, GIF favourite persistence/removal, dictation draft review and responsive layout.
-PASS: selected group, Stories tab, saved content and album folder survive reload with multiple groups.
-PASS: blocked-account recovery with no groups, confirmation cancellation and failed-request retry.
-PASS: mocked connected UI — session, groups, sends, QR/invite/revoke, member controls, vote/remove/re-entry flow, profile update. Not a live backend test.

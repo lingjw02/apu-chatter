@@ -11,3 +11,8 @@ test-results/
 # Local operational backups and generated root logs
 .agent-tmp/
 /*.log
+
+# AI-generated plans, QA logs and specs
+qa-run/
+docs/superpowers/
+PRODUCT.md

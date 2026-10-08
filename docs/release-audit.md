@@ -1,10 +1,9 @@
 # Web release audit — 2026-09-27
 
 The full release is **not complete**. The deployed preview is
-https://apu-chatter.pages.dev. This audit preserves the scope of the approved
-[specification](superpowers/specs/2026-09-21-apu-chatter-design.md), including
-features beyond the original text-chat pilot. An implemented feature is not
-automatically a passed release gate.
+https://apu-chatter.pages.dev. This audit covers all features in the approved
+specification, including features beyond the original text-chat pilot. An
+implemented feature is not automatically a passed release gate.
 
 ## Requirement and evidence map
 
